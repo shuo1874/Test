@@ -203,11 +203,11 @@ public String request(String sequence, String requestTimeStamp) throws 		Interru
 
 客户端：
 
-![image-20210322101043147](E:\j_p\Test\picture\image-20210322101043147.png)
+![image-20210322101043147](\picture\image-20210322101043147.png)
 
 服务端：
 
-![image-20210322101158534](E:\j_p\Test\picture\image-20210322101158534.png)
+![image-20210322101158534](\picture\image-20210322101158534.png)
 
 
 
