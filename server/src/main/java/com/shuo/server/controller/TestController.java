@@ -25,6 +25,7 @@ public class TestController {
         map.put("requestTimeStamp",requestTimeStamp);
 
 //        Thread.sleep(800);        //调整sleep时间测试响应超时情况
+        //返回数据转化为json字符串
         return getJSONString(200,"响应请求"+sequence,map);
     }
 

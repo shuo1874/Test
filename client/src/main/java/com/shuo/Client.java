@@ -88,6 +88,7 @@ public class Client {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
+                        //加锁以确保请求发送的顺序性
                         synchronized (o) {
                             requestNum++;
                             HttpPost request = Client.getRequest(requestNum + "");
@@ -119,8 +120,6 @@ public class Client {
                                     } catch (IOException e) {
                                         e.printStackTrace();
                                     }
-
-
                                 }
 
                                 @Override
@@ -141,8 +140,7 @@ public class Client {
             new Timer("timer").schedule(new TimerTask() {
                 @Override
                 public void run() {
-//                    System.out.println(Thread.currentThread().getName() + " run ");
-                    if(responseNum != requestNum){
+                   if(responseNum != requestNum){
                         log.error("发送请求数：" + requestNum + "；返回请求数：" + responseNum + "；未在" + requestNum + "秒内收到所有相应，返回失败");
                     }
                 }
